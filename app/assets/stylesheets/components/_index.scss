@@ -1,0 +1,23 @@
+// Import your components CSS files here.
+@import "alert";
+@import "avatar";
+@import "navbar";
+@import "cards";
+@import "map";
+@import "form";
+@import "banner";
+@import "button";
+@import "footer";
+@import "tabs";
+@import "list";
+
+
+body {
+  padding-top: 75px;
+}
+a {
+ text-decoration: none;
+ &:hover {
+text-decoration: none;
+ }
+}

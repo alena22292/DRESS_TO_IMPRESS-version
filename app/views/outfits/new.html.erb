@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="row row-margin-top">
+
+  <div class="aside d-flex flex-column align-items-center col-4">
+    <div class="logo-banner-image small">
+      <%= image_tag('logo_banner_image.png') %>
+    </div>
+  </div>
+  <div class="d-flex flex-row align-items-center col-6">
+    <div class="form-background w-100 d-flex flex-column align-items-center">
+      <div class="form-group">
+        <%= simple_form_for(@outfit) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :size, :collection => %w(xs s m l xl) %>
+        <%= f.input :gender, :collection => %w(male female) %>
+        <%= f.input :price %>
+        <%= f.input :category, :collection => ["gala", "christmas", "carnaval", "halloween", "new year", "wedding"] %>
+        <%= f.input :description %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :location %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Create new Outfit", class: "btn-margin btn-ghost" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>

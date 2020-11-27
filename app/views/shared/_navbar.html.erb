@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md fixed-top">
+  <div class="logo-navbar">
+    <%= image_tag('logo-small2.jpg') %>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <button id="navbtn">
+        <li class="nav-item active"><%= link_to 'HOME', root_path, class: "nav-link" %></li>
+      </button>
+
+      <button id="navbtn">
+        <li class="nav-item"><%= link_to 'DASHBOARD', dashboard_path, class: "nav-link" %></li>
+      </button>
+
+      <button id="navbtn">
+        <li class="nav-item"><%= link_to 'CREATE OUTFIT', new_outfit_path, class: "nav-link" %></li>
+      </button>
+
+      <div class="dropdown">
+        <button id="navbtn">REGISTER</button>
+        <div class="dropdown-content">
+          <% if user_signed_in? %>
+            <%= link_to "LOG OUT",  destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "REGISTER", new_user_registration_path %>
+            <%= link_to "LOG IN", user_session_path %>
+          <% end %>
+        </div>
+      </div>
+    </ul>
+      <%= render 'outfits/search' %>
+  </div>
+</nav>
